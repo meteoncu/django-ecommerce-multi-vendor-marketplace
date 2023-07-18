@@ -1,0 +1,239 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-13 15:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: notification/models.py:12
+msgid "Model Notification Field type"
+msgstr "Type"
+
+#: notification/models.py:13
+msgid "Model Notification Field user"
+msgstr "User"
+
+#: notification/models.py:14
+msgid "Model Notification Field notified_by"
+msgstr "Notified By"
+
+#: notification/models.py:15
+msgid "Model Notification Field message"
+msgstr "Message"
+
+#: notification/models.py:16
+msgid "Model Notification Field is_read"
+msgstr "Is Read"
+
+#: notification/models.py:17
+msgid "Model Notification Field created_at"
+msgstr "Created At"
+
+#: order/models.py:8 product/models.py:33
+msgid "Model Product Field user"
+msgstr "User"
+
+#: order/models.py:9 order/models.py:25 product/models.py:39
+#: product/models.py:78
+msgid "Model Field create_date"
+msgstr "Create Date"
+
+#: order/models.py:10 order/models.py:26 product/models.py:40
+#: product/models.py:79
+msgid "Model Field update_date"
+msgstr "Update Date"
+
+#: order/models.py:11
+msgid "Model Order Field purchase_date"
+msgstr "Purchase Date"
+
+#: order/models.py:22
+msgid "Model Receipt Field order"
+msgstr "Order"
+
+#: order/models.py:23
+msgid "Model Receipt Field product_variant"
+msgstr "Product Variant"
+
+#: order/models.py:24
+msgid "Model Receipt Field count"
+msgstr "Count"
+
+#: order/serializers.py:102
+msgid "Order Purchase Error: Already purchased"
+msgstr "Already Purchased"
+
+#: product/admin.py:61
+msgid "Has changes"
+msgstr "Has changes?"
+
+#: product/admin.py:66 product/admin.py:84
+msgid "Yes"
+msgstr "Yes"
+
+#: product/admin.py:67 product/admin.py:85
+msgid "No"
+msgstr "No"
+
+#: product/admin.py:79
+msgid "Main Category"
+msgstr "Main Category"
+
+#: product/models.py:8
+#, fuzzy
+#| msgid "Model Category Field name"
+msgid "Model Feature Field name"
+msgstr "Name"
+
+#: product/models.py:15
+#, fuzzy
+#| msgid "Model Category Field parent"
+msgid "Model FeatureOption Field feature"
+msgstr "Parent"
+
+#: product/models.py:16
+#, fuzzy
+#| msgid "Model Category Field name"
+msgid "Model FeatureOption Field name"
+msgstr "Name"
+
+#: product/models.py:23
+msgid "Model Category Field parent"
+msgstr "Parent"
+
+#: product/models.py:24
+msgid "Model Category Field name"
+msgstr "Name"
+
+#: product/models.py:25
+#, fuzzy
+#| msgid "Model Category Field parent"
+msgid "Model Category Field features"
+msgstr "Parent"
+
+#: product/models.py:26
+#, fuzzy
+#| msgid "Model Category Field parent"
+msgid "Model Category Field disable_parent_features"
+msgstr "Parent"
+
+#: product/models.py:34
+msgid "Model Product Field category"
+msgstr "Category"
+
+#: product/models.py:35
+msgid "Model Product Field title"
+msgstr "Name"
+
+#: product/models.py:36
+msgid "Model Product Field description"
+msgstr "Description"
+
+#: product/models.py:37
+msgid "Model Product Field url"
+msgstr "Url"
+
+#: product/models.py:38
+msgid "Model Product Field approved"
+msgstr "Approved"
+
+#: product/models.py:41
+#, fuzzy
+#| msgid "Model Product Field description"
+msgid "Model Product Field feature_options"
+msgstr "Features"
+
+#: product/models.py:63
+msgid "Model ProductDraft Field original"
+msgstr "Original"
+
+#: product/models.py:64
+msgid "Model ProductDraft Field category"
+msgstr "Category"
+
+#: product/models.py:65
+msgid "Model ProductDraft Field title"
+msgstr "Name"
+
+#: product/models.py:66
+msgid "Model ProductDraft Field description"
+msgstr "Description"
+
+#: product/models.py:67
+#, fuzzy
+#| msgid "Model ProductDraft Field description"
+msgid "Model ProductDraft Field feature_options"
+msgstr "Features"
+
+#: product/models.py:71 product/models.py:94
+msgid "Model ProductImage Field product"
+msgstr "Product"
+
+#: product/models.py:72
+msgid "Model ProductVariant Field name"
+msgstr "Name"
+
+#: product/models.py:73
+msgid "Model ProductVariant Field description"
+msgstr "Description"
+
+#: product/models.py:74
+msgid "Model ProductVariant Field price"
+msgstr "Price"
+
+#: product/models.py:75
+#, fuzzy
+#| msgid "Model ProductVariant Field name"
+msgid "Model ProductVariant Field inventory"
+msgstr "Inventory"
+
+#: product/models.py:76
+msgid "Model ProductVariant Field current"
+msgstr "Current"
+
+#: product/models.py:77
+msgid "Model ProductVariant Field approved"
+msgstr "Approved"
+
+#: product/models.py:95
+msgid "Model ProductImage Field image"
+msgstr "Image"
+
+#: product/models.py:96
+msgid "Model ProductImage Field approved"
+msgstr "Approved"
+
+#: product/models.py:97
+msgid "Model ProductImage Field delete"
+msgstr "Delete"
+
+#: product/models.py:104
+#, fuzzy
+#| msgid "Model Category Field parent"
+msgid "Model FeatureValue Field feature"
+msgstr "Parent"
+
+#: product/models.py:105
+#, fuzzy
+#| msgid "Model ProductImage Field product"
+msgid "Model FeatureValue Field product"
+msgstr "Product"
+
+#: product/models.py:106
+#, fuzzy
+#| msgid "Model Category Field name"
+msgid "Model FeatureValue Field name"
+msgstr "Name"

@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    restart: always
+    image: django
+    command: >
+      sh -c "python manage.py collectstatic --noinput &&
+             python manage.py makemigrations &&
+             python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_HOST=db
+      - DB_NAME=ecommerce_db
+      - DB_USER=ecommerce_user
+      - DB_PASS=Sfj0*sa-8M
+    depends_on:
+      - db
+    volumes:
+      - ecommerce_media:/app/media
+
+
+  db:
+    image: postgres:12-alpine
+    restart: always
+    container_name: "ecoommerce_db"
+    ports:
+      - "54320:5432"
+    environment:
+      POSTGRES_DB: ecommerce_db
+      POSTGRES_USER: ecommerce_user
+      POSTGRES_PASSWORD: Sfj0*sa-8M
+    volumes:
+      - ecommerce_db:/var/lib/postgresql/data
+
+
+volumes:
+  ecommerce_media:
+  ecommerce_db:
