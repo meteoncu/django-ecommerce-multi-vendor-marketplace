@@ -9,6 +9,7 @@ The easiest way to build and run the project is using Docker with docker-compose
 Build and run the project with the following terminal command:
 docker-compose up --build
 
+### Virtual environment
 Alternatively, you can set up a virtual environment and install the required packages from `requirements.txt`.
 
 Migrate the migrations to the SQLite database using the command:
