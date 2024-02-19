@@ -1,91 +1,84 @@
 # Emte Ecommerce API
 
-Emte Ecommerce API provides an infrastructure for Product, Basket and Order processes to every part of the operation.
+Emte Ecommerce API provides infrastructure for Product, Basket, and Order processes, supporting various operations within the system.
 
-## How to run
-### Docker and Docker compose
-The easiest way to build and run the project is to use Docker with docker-compose.
+## How to Run
+### Docker and Docker Compose
+The easiest way to build and run the project is using Docker with docker-compose.
 
-You can build and up the project by the terminal command
-: docker-compose up --build
+Build and run the project with the following terminal command:
+docker-compose up --build
 
-### Virtual environment
-Otherwise you need to build a virtual environment and install the packages on the requirements.txt.
+Alternatively, you can set up a virtual environment and install the required packages from `requirements.txt`.
 
-Then migrate the migrations on the sqlite database by the command : python manage.py migrate --settings=app.sqlite
+Migrate the migrations to the SQLite database using the command:
+python manage.py migrate --settings=app.sqlite
 
-Then you can run the server by the command : python manage.py runserver 0.0.0.0:8000 --settings=app.sqlite
+Run the server with the command:
+python manage.py runserver 0.0.0.0:8000 --settings=app.sqlite
 
-You can create an admin account by the command : python manage.py createsuperuser --settings=app.sqlite
-
-## How to try
-You can easily send requests by using postman collection.
-
-Here is the postman collection link, just import the collection and start to try
-https://www.getpostman.com/collections/68c103eb1721232ec101
+Create an admin account using the command:
+python manage.py createsuperuser --settings=app.sqlite
 
 ## System Architecture
 
 ### Product
-A product is the subject of the whole process. It is created by seller with a name, a category, images, features, variants with a description and a price for each.
+A product is the central element of the system, created by sellers with attributes such as name, category, images, features, and variants, each with a description and price.
 
-A buyer adds a product to his/her basket. It is kept as a receipt which represents the basket product with a few extra information.
+Buyers add products to their baskets, which are stored as receipts containing product details and additional information.
 
-After purchase is completed, products remain in an order object for future display.
+After a purchase, products are kept in an order object for future reference.
 
 #### Product Variants
-A product variant is an altered version with a small difference from the other variants. A variant has a name, description and its own price.
+A product variant is a version of a product with minor differences. Each variant has its own name, description, and price.
 
-After a product's variant changes, previous variant's information remains as invisible to the market. This rule lets purchase informations remain and is necessary for tracking seller activity.
+When a product's variant changes, the information of the previous variant remains hidden in the market, preserving purchase details and tracking seller activity.
 
 #### Product Features
-A product can be more descriptive by getting specified its features. Features and value of these features of a product are determined by the admin.
+Products can be described in more detail by specifying their features. The features and their values are determined by the admin.
 
-A product inherits its features from its category and parents of the category. The list of the allowed features is a sum of the features while parent exists and it does not block its parent's features.
+A product inherits features from its category and the category's parents. The list of allowed features is a cumulative sum of the features up the hierarchy, without blocking the parent's features.
 
 #### Product Images
 A product can have multiple images.
 
 ### Receipt
-A receipt holds product variant, basket count and date information of the products. Information remains even after features of the product variant change.
+A receipt contains information about a product variant, basket count, and date. It retains information even after the product variant's features change.
 
-All receipts are bonded to an order object with a null purchase date at the first step.
+All receipts are initially linked to an order object with a null purchase date.
 
-Before the purchase, they represent products in the basket.
+Before a purchase, they represent products in the basket.
 
-After the purchase, they become the memory of the order operation.
+After a purchase, they serve as a record of the transaction.
 
 ### Order
-An order object keeps together all the information about a purchase, including the objects mentioned above.
+An order object aggregates all information related to a purchase, including the products, variants, and receipts.
 
 ### User
-A user can become both a buyer and a seller on the system.
+Users can be both buyers and sellers in the system.
 
-It simply requires an email address and a password with some other basic information.
+Registration requires an email address, password, and basic personal information.
 
 ## Security
 
 ### Django Rest Framework
-API and the system is built on Django Rest Framework. It is already a trusted web framework which is used by millions.
+The API and system are built on the Django Rest Framework, a trusted and widely-used web framework.
 
-### Ownership of the objects
-Ownership of the objects are controlled by viewset permissions. Everyone can update and delete only their own user, products, receipts and orders.
+### Ownership of Objects
+Object ownership is controlled by viewset permissions. Users can only update and delete their own user profiles, products, receipts, and orders.
 
-Receipts and orders can be updated only before the purchase.
+Receipts and orders can only be updated before the purchase is finalized.
 
-### Preventing inconvenient content
-Inconvenient contents are prevented by the requirement of admin approve for changes before they show up on the system.
+### Preventing Inappropriate Content
+Inappropriate content is prevented by requiring admin approval for changes before they are displayed in the system.
 
 ## Admin Panel
 
-### Displayed columns
-Most necessarry columns of the models are considered and displayed on the Django Admin Panel.
+### Displayed Columns
+Critical columns of the models are displayed in the Django Admin Panel for easy management.
 
 ### Filters
-Critique fields are considered for better accesibility and provided as filters on the model display page. As critique fields, some of the related objects' fields are also added to the filters.
+Critical fields are provided as filters on the model display page for better accessibility. Some related objects' fields are also included as filters.
 
-### Restricted actions
-Product, receipt and order operations are quite a bit complicated. So they are handled well only through views and serializers.
-
-Any manuel update on the Django admin panel can cause an unexpected and chain error on the system. So actions on the Django admin panel are restricted for the sake of the operations.
-
+### Restricted Actions
+Due to the complexity of product, receipt, and order operations, they are managed exclusively through views and serializers.
